@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A&AH Auto Detailing — Professional mobile auto detailing in Springfield, IL. We come to your home or office. Interior, exterior, ceramic coating, paint correction. Call (217) 494-2304.">
+<title>A&AH Mobile Detailing — Springfield, IL</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#0a0a0a;--white:#f5f3ee;--gold:#c9a84c;--gold2:#e8c96a;--mid:#161616;--gray:#888;--border:rgba(201,168,76,.12)}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(10,10,10,.97),transparent);backdrop-filter:blur(4px)}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.12em;color:var(--white)}
+.logo span{color:var(--gold)}
+.nav-cta{padding:.5rem 1.2rem;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;transition:all .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--gold);color:var(--black)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 2rem 4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 65% 40%,rgba(201,168,76,.07),transparent 60%),linear-gradient(160deg,#0a0a0a 40%,#0f0e08 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.035) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent 70%)}
+.hero-content{position:relative;z-index:2;max-width:600px}
+.hero-tag{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;opacity:0;animation:up .8s .2s forwards}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,9vw,7.5rem);line-height:.92;letter-spacing:.02em;margin-bottom:1.5rem;opacity:0;animation:up .8s .4s forwards}
+h1 em{font-style:normal;color:var(--gold);display:block}
+.hero-sub{font-size:.95rem;font-weight:300;line-height:1.7;color:#aaa;margin-bottom:2rem;max-width:420px;opacity:0;animation:up .8s .6s forwards}
+.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap;opacity:0;animation:up .8s .8s forwards}
+.btn-gold{padding:.8rem 2rem;background:var(--gold);color:var(--black);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:all .2s}
+.btn-gold:hover{background:var(--gold2)}
+.btn-outline{padding:.8rem 2rem;border:1px solid rgba(255,255,255,.2);color:var(--white);text-decoration:none;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;transition:all .2s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-badge{position:absolute;right:2rem;bottom:4rem;text-align:center;z-index:2;opacity:0;animation:fade 1s 1s forwards}
+.hero-badge .big{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:var(--gold);line-height:1}
+.hero-badge .stars{font-size:.95rem;letter-spacing:.2em;color:var(--gold);margin:.2rem 0}
+.hero-badge .lbl{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray)}
+
+/* MARQUEE */
+.ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.75rem 0;overflow:hidden;background:rgba(201,168,76,.02)}
+.ticker-inner{display:flex;gap:2.5rem;white-space:nowrap;animation:scroll 20s linear infinite}
+.ticker-inner span{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.ticker-inner .dot{color:rgba(201,168,76,.3)}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.inner{max-width:1080px;margin:0 auto}
+.sec-label{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.6rem}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);letter-spacing:.03em;line-height:1;margin-bottom:2.5rem}
+
+/* PRICING */
+.pricing-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:2rem}
+.pkg{background:var(--black);padding:2rem 1.75rem;transition:background .2s}
+.pkg:hover{background:var(--mid)}
+.pkg-icon{font-size:1.8rem;margin-bottom:.75rem}
+.pkg-name{font-size:1rem;font-weight:500;margin-bottom:.4rem;letter-spacing:.02em}
+.pkg-sub{font-size:.78rem;color:var(--gray);margin-bottom:1.25rem}
+.price-row{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.82rem}
+.price-row:last-child{border:none}
+.price-row .car{color:var(--gray)}
+.price-row .price{color:var(--gold);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.05em}
+.addons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.addon{background:var(--black);padding:1.25rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.addon-name{font-size:.82rem;color:#ccc}
+.addon-price{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--gold);letter-spacing:.05em}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:2rem}
+.gitem{overflow:hidden;background:var(--mid);position:relative;height:240px}
+.gitem img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gitem:hover img{transform:scale(1.05)}
+.gitem .glabel{position:absolute;bottom:0;left:0;right:0;padding:.5rem .75rem;background:linear-gradient(transparent,rgba(0,0,0,.75));font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2.5rem}
+.stat{border-left:2px solid var(--gold);padding-left:1.2rem}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--white);line-height:1}
+.stat-num span{color:var(--gold)}
+.stat-lbl{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-top:.2rem}
+.feats{display:flex;flex-direction:column;gap:1rem}
+.feat{display:flex;gap:.75rem;align-items:flex-start;font-size:.88rem;color:#bbb;line-height:1.6}
+.feat::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:.1rem}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2.5rem;position:relative}
+.steps::before{content:'';position:absolute;top:1.4rem;left:12%;right:12%;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);z-index:0}
+.step{text-align:center;padding:0 .75rem;position:relative;z-index:1}
+.step-circle{width:2.8rem;height:2.8rem;border:1px solid rgba(201,168,76,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--gold);background:var(--black)}
+.step-name{font-size:.9rem;font-weight:500;margin-bottom:.4rem}
+.step-desc{font-size:.75rem;color:var(--gray);line-height:1.6}
+
+/* CTA */
+.cta-section{text-align:center;background:var(--mid);position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(201,168,76,.06),transparent 70%)}
+.cta-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,7vw,5.5rem);letter-spacing:.03em;line-height:.95;margin-bottom:1.2rem;position:relative}
+.cta-title span{color:var(--gold)}
+.cta-sub{font-size:.95rem;color:var(--gray);margin-bottom:1.5rem;font-weight:300;position:relative}
+.cta-phone{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--gold);letter-spacing:.1em;display:block;margin-bottom:.4rem;text-decoration:none;position:relative}
+.cta-phone:hover{color:var(--gold2)}
+.cta-area{font-size:.72rem;color:var(--gray);letter-spacing:.15em;text-transform:uppercase;margin-bottom:2rem;position:relative}
+.cta-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative}
+
+/* FOOTER */
+footer{border-top:1px solid rgba(255,255,255,.06);padding:1.75rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.foot-logo{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.12em;color:var(--gray)}
+.foot-logo span{color:var(--gold)}
+.foot-copy{font-size:.7rem;color:#3a3a3a}
+.foot-links{display:flex;gap:1.5rem}
+.foot-links a{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#555;text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--gold)}
+
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{padding:.9rem 1.25rem}
+  .hero{padding:0 1.25rem 3.5rem}
+  h1{font-size:3.2rem}
+  .hero-badge{display:none}
+  .pricing-wrap{grid-template-columns:1fr}
+  .addons-grid{grid-template-columns:1fr 1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gitem:first-child{grid-column:1/3;grid-row:auto;height:220px}
+  .gitem{height:160px}
+  .why-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:2rem}
+  .steps::before{display:none}
+  section{padding:3.5rem 1.25rem}
+  .addons-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center}
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17697227117"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17697227117');
+</script>
+
+<!-- Google Ads Call Click Conversion -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17697227117/call_click',
+      'event_callback': callback
+  });
+  return false;
+}
+
+// Track all tel: link clicks
+document.addEventListener('DOMContentLoaded', function() {
+  var telLinks = document.querySelectorAll('a[href^="tel:"]');
+  telLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17697227117/eKl8CI-6r7kcEO2C2fZB'
+      });
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">A<span>&</span>AH<span style="opacity:.3">·</span>MOBILE DETAILING</div>
+  <a href="tel:2174942304" class="nav-cta">☎ (217) 494-2304</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Springfield, Illinois · Mobile Service</div>
+    <h1>We Come<em>To You.</em></h1>
+    <p class="hero-sub">Professional mobile auto detailing at your home or office. Interior, exterior, ceramic coating and more — we bring the shine to you.</p>
+    <div class="hero-btns">
+      <a href="tel:2174942304" class="btn-gold">Book Now · Call</a>
+      <a href="#pricing" class="btn-outline">View Pricing</a>
+    </div>
+  </div>
+  <div class="hero-badge">
+    <div class="big">5.0</div>
+    <div class="stars">★★★★★</div>
+    <div class="lbl">Google Rating</div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Interior Detail</span><span class="dot">·</span>
+    <span>Exterior Detail</span><span class="dot">·</span>
+    <span>Ceramic Coating</span><span class="dot">·</span>
+    <span>Paint Correction</span><span class="dot">·</span>
+    <span>Engine Bay Clean</span><span class="dot">·</span>
+    <span>Odor Removal</span><span class="dot">·</span>
+    <span>Pet Hair Removal</span><span class="dot">·</span>
+    <span>Mobile Service</span><span class="dot">·</span>
+    <span>Interior Detail</span><span class="dot">·</span>
+    <span>Exterior Detail</span><span class="dot">·</span>
+    <span>Ceramic Coating</span><span class="dot">·</span>
+    <span>Paint Correction</span><span class="dot">·</span>
+    <span>Engine Bay Clean</span><span class="dot">·</span>
+    <span>Odor Removal</span><span class="dot">·</span>
+    <span>Pet Hair Removal</span><span class="dot">·</span>
+    <span>Mobile Service</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="inner">
+    <span class="sec-label">Transparent Pricing</span>
+    <h2 class="sec-title">Services & Prices</h2>
+    <div class="pricing-wrap">
+      <div class="pkg">
+        <div class="pkg-icon">🪑</div>
+        <div class="pkg-name">Interior Deep Cleaning</div>
+        <div class="pkg-sub">Vacuum · Steam · Shampoo · Stain removal · Surface wipe</div>
+        <div class="price-row"><span class="car">Coupe / Sedan</span><span class="price">$150</span></div>
+        <div class="price-row"><span class="car">Mid-Sized SUV</span><span class="price">$199</span></div>
+        <div class="price-row"><span class="car">Large SUV / Truck</span><span class="price">$250</span></div>
+      </div>
+      <div class="pkg">
+        <div class="pkg-icon">✨</div>
+        <div class="pkg-name">Exterior Detail</div>
+        <div class="pkg-sub">Wash + Wax Protection · Clay bar · Tire dressing</div>
+        <div class="price-row"><span class="car">Coupe / Sedan</span><span class="price">$50</span></div>
+        <div class="price-row"><span class="car">Mid-Sized SUV</span><span class="price">$70</span></div>
+        <div class="price-row"><span class="car">Large SUV / Truck</span><span class="price">$100</span></div>
+      </div>
+      <div class="pkg" style="grid-column:1/-1;background:rgba(201,168,76,.04)">
+        <div class="pkg-icon">⭐</div>
+        <div class="pkg-name">Full Detail — Interior + Exterior</div>
+        <div class="pkg-sub">Complete 360° mobile detailing — best value</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px">
+          <div class="price-row" style="flex-direction:column;align-items:flex-start;gap:.3rem;padding:.75rem 0">
+            <span class="car">Coupe / Sedan</span><span class="price">$200</span>
+          </div>
+          <div class="price-row" style="flex-direction:column;align-items:flex-start;gap:.3rem;padding:.75rem 0;border:none;border-left:1px solid rgba(255,255,255,.05);padding-left:1rem">
+            <span class="car">Mid-Sized SUV</span><span class="price">$269</span>
+          </div>
+          <div class="price-row" style="flex-direction:column;align-items:flex-start;gap:.3rem;padding:.75rem 0;border:none;border-left:1px solid rgba(255,255,255,.05);padding-left:1rem">
+            <span class="car">Large SUV / Truck</span><span class="price">$299</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="sec-label" style="margin-bottom:.75rem;display:block">Add-On Services</span>
+    <div class="addons-grid">
+      <div class="addon"><span class="addon-name">Liquid Wax Protection</span><span class="addon-price">+$50</span></div>
+      <div class="addon"><span class="addon-name">Pet Hair Removal</span><span class="addon-price">from +$30</span></div>
+      <div class="addon"><span class="addon-name">Stain Removal</span><span class="addon-price">+$25–50</span></div>
+      <div class="addon"><span class="addon-name">Leather Conditioning</span><span class="addon-price">+$30</span></div>
+      <div class="addon"><span class="addon-name">Headliner Cleaning</span><span class="addon-price">+$50</span></div>
+      <div class="addon"><span class="addon-name">Odor Removal</span><span class="addon-price">+$50–100</span></div>
+      <div class="addon"><span class="addon-name">Engine Bay Cleaning</span><span class="addon-price">+$40–60</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="padding-top:0">
+  <div class="inner">
+    <span class="sec-label">Our Work</span>
+    <h2 class="sec-title">Before & After</h2>
+    <div class="gallery-grid">
+      <div class="gitem"><img src="images/opt/g7.jpg" alt="Before after auto detailing Springfield IL" loading="lazy"><div class="glabel">Before / After</div></div>
+      <div class="gitem"><img src="images/opt/g8.jpg" alt="Car detailing before after Springfield" loading="lazy"><div class="glabel">Before / After</div></div>
+      <div class="gitem"><img src="images/opt/g10.jpg" alt="Mobile detailing Springfield IL" loading="lazy"><div class="glabel">Before / After</div></div>
+      <div class="gitem"><img src="images/opt/g12.jpg" alt="Interior detailing Springfield" loading="lazy"><div class="glabel">Before / After</div></div>
+      <div class="gitem"><img src="images/opt/photo_2.jpg" alt="Auto detail Springfield IL" loading="lazy"><div class="glabel">Our Work</div></div>
+      <div class="gitem"><img src="images/opt/photo_12.jpg" alt="Car interior cleaning Springfield" loading="lazy"><div class="glabel">Our Work</div></div>
+      <div class="gitem"><img src="images/opt/photo_16.jpg" alt="Professional detailing Springfield IL" loading="lazy"><div class="glabel">Our Work</div></div>
+      <div class="gitem"><img src="images/opt/photo_5.jpg" alt="Mobile car detailing Springfield" loading="lazy"><div class="glabel">Our Work</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section style="background:var(--mid)">
+  <div class="inner">
+    <div class="why-grid">
+      <div>
+        <span class="sec-label">Why A&AH</span>
+        <h2 class="sec-title">Mobile.<br>Professional.<br>5-Star.</h2>
+        <div class="feats">
+          <div class="feat">We come to your home or office — no drop-off needed</div>
+          <div class="feat">Evening appointments available — we work until 8 PM</div>
+          <div class="feat">Serving Springfield and 16-mile radius</div>
+          <div class="feat">All payment methods: cards, NFC, cash</div>
+          <div class="feat">100% satisfaction guaranteed</div>
+        </div>
+      </div>
+      <div>
+        <div class="stats-grid">
+          <div class="stat"><div class="stat-num">5.0<span>★</span></div><div class="stat-lbl">Google Rating</div></div>
+          <div class="stat"><div class="stat-num">8<span>PM</span></div><div class="stat-lbl">Latest Booking</div></div>
+          <div class="stat"><div class="stat-num">16<span>mi</span></div><div class="stat-lbl">Service Radius</div></div>
+          <div class="stat"><div class="stat-num">IL</div><div class="stat-lbl">Springfield & Area</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="inner">
+    <span class="sec-label">Simple Process</span>
+    <h2 class="sec-title">How It Works</h2>
+    <div class="steps">
+      <div class="step"><div class="step-circle">01</div><div class="step-name">Call or Text</div><div class="step-desc">Reach us at (217) 494-2304 to discuss your needs</div></div>
+      <div class="step"><div class="step-circle">02</div><div class="step-name">Pick a Time</div><div class="step-desc">Choose a convenient slot — we work around your schedule</div></div>
+      <div class="step"><div class="step-circle">03</div><div class="step-name">We Come to You</div><div class="step-desc">We arrive at your location with all equipment</div></div>
+      <div class="step"><div class="step-circle">04</div><div class="step-name">Enjoy the Shine</div><div class="step-desc">Your car looks brand new — clean, protected, fresh</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="inner">
+    <h2 class="cta-title">Ready for a<br><span>Clean Car?</span></h2>
+    <p class="cta-sub">Call or text — we'll set up your appointment today.</p>
+    <a href="tel:2174942304" class="cta-phone">(217) 494-2304</a>
+    <div class="cta-area">Springfield, IL · Mobile Detailing · We Come to You</div>
+    <div class="cta-btns">
+      <a href="tel:2174942304" class="btn-gold">Call Now</a>
+      <a href="sms:2174942304" class="btn-outline">Text Us</a>
+      <a href="https://wa.me/12174946906" class="btn-outline" target="_blank" style="border-color:rgba(37,211,102,.4);color:#25d366">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">A<span>&</span>AH MOBILE DETAILING</div>
+  <div class="foot-copy">© 2026 A&AH Auto Detailing · Springfield, IL 62704</div>
+  <div class="foot-links">
+    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    <a href="https://wa.me/12174946906" target="_blank">WhatsApp</a>
+    <a href="tel:2174942304">(217) 494-2304</a>
+  </div>
+</footer>
+
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/12174946906" target="_blank" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;width:3.2rem;height:3.2rem;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.4);font-size:1.5rem;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">💬</a>
+
+</body>
+</html>
