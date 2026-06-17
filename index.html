@@ -276,20 +276,154 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- GALLERY -->
 <section id="gallery" style="padding-top:0">
   <div class="inner">
-    <span class="sec-label">Our Work</span>
+    <span class="sec-label">Real Transformations</span>
     <h2 class="sec-title">Before & After</h2>
-    <div class="gallery-grid">
-      <div class="gitem"><img src="images/opt/g7.jpg" alt="Before after auto detailing Springfield IL" loading="lazy"><div class="glabel">Before / After</div></div>
-      <div class="gitem"><img src="images/opt/g8.jpg" alt="Car detailing before after Springfield" loading="lazy"><div class="glabel">Before / After</div></div>
-      <div class="gitem"><img src="images/opt/g10.jpg" alt="Mobile detailing Springfield IL" loading="lazy"><div class="glabel">Before / After</div></div>
-      <div class="gitem"><img src="images/opt/g12.jpg" alt="Interior detailing Springfield" loading="lazy"><div class="glabel">Before / After</div></div>
-      <div class="gitem"><img src="images/opt/photo_2.jpg" alt="Auto detail Springfield IL" loading="lazy"><div class="glabel">Our Work</div></div>
-      <div class="gitem"><img src="images/opt/photo_12.jpg" alt="Car interior cleaning Springfield" loading="lazy"><div class="glabel">Our Work</div></div>
-      <div class="gitem"><img src="images/opt/photo_16.jpg" alt="Professional detailing Springfield IL" loading="lazy"><div class="glabel">Our Work</div></div>
-      <div class="gitem"><img src="images/opt/photo_5.jpg" alt="Mobile car detailing Springfield" loading="lazy"><div class="glabel">Our Work</div></div>
+
+    <div class="ba-grid">
+
+      <!-- Job 1 -->
+      <div class="ba-card">
+        <div class="ba-slider" data-job="1">
+          <img class="ba-after" src="images/opt/new/new_13.jpg" alt="After detailing Springfield IL">
+          <div class="ba-before-wrap">
+            <img class="ba-before" src="images/opt/new/new_8.jpg" alt="Before detailing Springfield IL">
+          </div>
+          <div class="ba-handle"></div>
+          <span class="ba-tag ba-tag-before">Before</span>
+          <span class="ba-tag ba-tag-after">After</span>
+        </div>
+        <div class="ba-caption">Full Interior Detail</div>
+      </div>
+
+      <!-- Job 2 -->
+      <div class="ba-card">
+        <div class="ba-slider" data-job="2">
+          <img class="ba-after" src="images/opt/new/new_29.jpg" alt="After mobile detailing">
+          <div class="ba-before-wrap">
+            <img class="ba-before" src="images/opt/new/new_22.jpg" alt="Before mobile detailing">
+          </div>
+          <div class="ba-handle"></div>
+          <span class="ba-tag ba-tag-before">Before</span>
+          <span class="ba-tag ba-tag-after">After</span>
+        </div>
+        <div class="ba-caption">Exterior Wash & Wax</div>
+      </div>
+
+      <!-- Job 3 - multi angle -->
+      <div class="ba-card ba-card-wide">
+        <div class="ba-multi">
+          <div class="ba-multi-side">
+            <span class="ba-multi-label">Before</span>
+            <div class="ba-multi-strip" data-side="before">
+              <img src="images/opt/new/new_19.jpg" class="active" alt="Before angle 1">
+              <img src="images/opt/new/new_17.jpg" alt="Before angle 2">
+              <img src="images/opt/new/new_20.jpg" alt="Before angle 3">
+              <img src="images/opt/new/new_23.jpg" alt="Before angle 4">
+            </div>
+            <div class="ba-dots" data-side="before">
+              <span class="active"></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="ba-multi-arrow">→</div>
+          <div class="ba-multi-side">
+            <span class="ba-multi-label ba-multi-label-after">After</span>
+            <div class="ba-multi-strip" data-side="after">
+              <img src="images/opt/new/new_3.jpg" class="active" alt="After angle 1">
+              <img src="images/opt/new/new_21.jpg" alt="After angle 2">
+              <img src="images/opt/new/new_27.jpg" alt="After angle 3">
+            </div>
+            <div class="ba-dots" data-side="after">
+              <span class="active"></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+        <div class="ba-caption">Full Detail — Multiple Angles</div>
+      </div>
+
     </div>
   </div>
 </section>
+
+<style>
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
+.ba-card{display:flex;flex-direction:column;gap:.75rem}
+.ba-card-wide{grid-column:1/-1}
+.ba-caption{font-size:.85rem;color:var(--gray);text-align:center;letter-spacing:.05em;text-transform:uppercase}
+
+.ba-slider{position:relative;width:100%;height:340px;overflow:hidden;border-radius:4px;cursor:ew-resize;user-select:none;background:var(--mid)}
+.ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ba-before-wrap{position:absolute;inset:0;width:50%;overflow:hidden}
+.ba-before-wrap img{width:200%;max-width:none;position:absolute;left:0;top:0;height:100%;object-fit:cover}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--gold);transform:translateX(-50%);box-shadow:0 0 8px rgba(201,168,76,.6)}
+.ba-handle::after{content:'⇔';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:2.4rem;height:2.4rem;background:var(--gold);color:var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700}
+.ba-tag{position:absolute;top:.75rem;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .7rem;background:rgba(0,0,0,.6);color:#fff;border-radius:2px}
+.ba-tag-before{left:.75rem}
+.ba-tag-after{right:.75rem}
+
+.ba-multi{display:grid;grid-template-columns:1fr auto 1fr;gap:1.5rem;align-items:center}
+.ba-multi-side{display:flex;flex-direction:column;gap:.6rem}
+.ba-multi-label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);text-align:center}
+.ba-multi-label-after{color:var(--gold)}
+.ba-multi-strip{position:relative;width:100%;height:280px;border-radius:4px;overflow:hidden;background:var(--mid)}
+.ba-multi-strip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s}
+.ba-multi-strip img.active{opacity:1}
+.ba-multi-arrow{font-size:1.8rem;color:var(--gold);font-family:'Bebas Neue',sans-serif}
+.ba-dots{display:flex;justify-content:center;gap:.4rem}
+.ba-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:background .2s}
+.ba-dots span.active{background:var(--gold)}
+
+@media(max-width:768px){
+  .ba-grid{grid-template-columns:1fr}
+  .ba-slider{height:260px}
+  .ba-multi{grid-template-columns:1fr;gap:1rem}
+  .ba-multi-arrow{transform:rotate(90deg);justify-self:center}
+  .ba-multi-strip{height:220px}
+}
+</style>
+
+<script>
+document.querySelectorAll('.ba-slider').forEach(function(slider){
+  var wrap = slider.querySelector('.ba-before-wrap');
+  var handle = slider.querySelector('.ba-handle');
+  var dragging = false;
+
+  function setPos(x){
+    var rect = slider.getBoundingClientRect();
+    var pct = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
+    wrap.style.width = pct + '%';
+    handle.style.left = pct + '%';
+  }
+
+  slider.addEventListener('mousedown', function(e){ dragging = true; setPos(e.clientX); });
+  window.addEventListener('mousemove', function(e){ if(dragging) setPos(e.clientX); });
+  window.addEventListener('mouseup', function(){ dragging = false; });
+
+  slider.addEventListener('touchstart', function(e){ dragging = true; setPos(e.touches[0].clientX); });
+  slider.addEventListener('touchmove', function(e){ if(dragging) setPos(e.touches[0].clientX); });
+  slider.addEventListener('touchend', function(){ dragging = false; });
+});
+
+document.querySelectorAll('.ba-multi-strip').forEach(function(strip){
+  var side = strip.dataset.side;
+  var imgs = strip.querySelectorAll('img');
+  var dots = document.querySelector('.ba-dots[data-side="' + side + '"]').querySelectorAll('span');
+  var idx = 0;
+
+  function show(i){
+    imgs.forEach(function(img, n){ img.classList.toggle('active', n === i); });
+    dots.forEach(function(d, n){ d.classList.toggle('active', n === i); });
+    idx = i;
+  }
+
+  dots.forEach(function(dot, n){
+    dot.addEventListener('click', function(){ show(n); });
+  });
+
+  setInterval(function(){
+    show((idx + 1) % imgs.length);
+  }, 3000);
+});
+</script>
 
 <!-- WHY -->
 <section style="background:var(--mid)">
